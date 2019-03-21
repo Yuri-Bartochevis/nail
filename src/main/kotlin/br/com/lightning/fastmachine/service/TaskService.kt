@@ -6,19 +6,18 @@ import org.springframework.stereotype.Service
 class TaskService {
 
     private fun externalClient(): String{
-        Thread.sleep(400)
+        Thread.sleep(400 * 2)
         return ""
     }
 
     private fun accessDatabase(): String{
-        Thread.sleep(100)
+        Thread.sleep(100 * 2)
         return "data"
     }
 
     fun process(): String{
         externalClient()
         accessDatabase()
-        println("threadName: ${Thread.currentThread().name}")
         return "done"
     }
 }
